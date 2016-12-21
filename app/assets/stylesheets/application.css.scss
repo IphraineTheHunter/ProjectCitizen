@@ -29,6 +29,7 @@
      border-radius: 0px;
      background-color: black;
      color: white;
+     text-align: center;
  }
 
  .navbar-right {
@@ -45,8 +46,12 @@
 
 .container {
     background-color: #dddddd;
-    margin-bottom: auto;
     border-radius: 6px;
+}
+
+.name {
+    margin: auto;
+    font-size: 2em;
 }
 
 h1 {
