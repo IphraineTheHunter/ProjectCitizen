@@ -10,6 +10,14 @@
 
   <body>
     <%= render 'shared/navigation' %>
+        <% if notice.present? or alert.present? %>
+            <div class="container notice">
+                <h3>
+                    <%= notice %>
+                    <%= alert %>
+                </h3>
+            </div>
+        <% end %>
     <%= yield %>
   </body>
 </html>

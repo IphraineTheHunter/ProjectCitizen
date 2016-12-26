@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "home#index"
 
-  get 'sign_up', to: 'registrations#show'
+#  get 'sign_up', to: 'users#show'
 
-  resources :registrations
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
