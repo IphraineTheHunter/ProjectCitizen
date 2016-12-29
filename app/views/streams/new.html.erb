@@ -1,0 +1,22 @@
+<div class="container">
+        <h1>Make new thread  in <%= @board_name %></h1>
+        <%= form_tag ('/board/' + @board.id.to_s + '/streams'), url: { :action => "create", } do %>
+            <div class="field">
+                <%= label_tag 'Title: ' %></br>
+                <%= text_field_tag :title %></br>
+                <%= label_tag 'Content: '%></br>
+                <%= text_area_tag :content %>
+            </div>
+            <div class="action">
+                <%= submit_tag 'Submit Post' %>
+            </div>
+        <% end %>
+</div>
+
+<div class="container">
+    <a href="/board/"/>
+        <div class="bot_nav">
+            <h3> <<< Back to Boards</h3>
+        </div>
+    </a>
+</div>

@@ -1,0 +1,8 @@
+
+<div class="container">
+    <h1>Forum</h1>
+    <% @boards.each do |board| %>
+        <h3><a href="/board/<%= board.id %>/streams/"><%= board.name %></a></h3>
+        <hr>
+    <% end %>
+</div>

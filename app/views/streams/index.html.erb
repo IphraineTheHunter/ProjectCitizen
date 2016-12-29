@@ -1,0 +1,20 @@
+<div class="container">
+    <h1><%= @board_name %> </hi>
+    <% @streams.each do |streams| %>
+        <h3><a href="/board/<%= @board_id %>/streams/<%= streams.id %>"><%= streams.title %></a></h3>
+        <hr>
+    <% end %>
+</div>
+<div class="container">
+
+            <a href="/board/"/>
+                <div class="bot_nav">
+                    <h3> <<< Back to Boards</h3>
+                </div>
+            </a>
+            <a href="/board/<%= @board_id %>/streams/new">
+                <div class="new bot_nav">
+                    <h3>New Thread</h3>
+                </div>
+            </a>
+</div>

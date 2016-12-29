@@ -5,7 +5,18 @@
 		</div>
 		<span class="name">Project Citizen</span>
 		<ul class="nav navbar-nav navbar-right">
-            <li><a href="/users/sign_up">Sign Up</a></li>
+			<% if user_signed_in? %>
+				<li><a href="/board/">Forum</a></li>
+				<li>
+					<%= link_to(destroy_user_session_path, :method => :delete) do %>
+						Sign Out<span class="glyphicon glyphicon-log-out after-text-glyph"></span>
+					<% end %>
+				</li>
+			<% else %>
+				<li>
+					<%= link_to('Sign in', new_user_session_path)  %>
+				</li>
+			<% end %>
 		</ul>
 	</div>
 </nav>

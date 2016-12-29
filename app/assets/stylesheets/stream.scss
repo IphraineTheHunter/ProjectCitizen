@@ -1,0 +1,31 @@
+// Place all the styles related to the stream controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile {
+
+}
+
+.post {
+    display: inline-block;
+    width: 99%;
+
+    margin: 3px;
+
+    background-color: #eee;
+
+    ul {
+        list-style-type: none;
+    }
+}
+
+
+.post-content {
+    background-color: white;
+    height: 100px;
+    width: 90%;
+    padding: 3px;
+    border-style: dotted;
+    border-width: thin;
+    border-color: black;
+}

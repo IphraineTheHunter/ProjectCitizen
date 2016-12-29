@@ -1,0 +1,31 @@
+<div class="container">
+    <h1><%= @stream_title %> </h1>
+    <% @posts.each do |posts| %>
+        <div class="post">
+            <ul>
+                <li>
+                    <div class="profile">
+                        <h4><%= User.find(posts.user_id).name %></h4>
+                        <div class="post-content">
+                            <p><%= posts.content %></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    <% end %>
+</div>
+
+<div class="container">
+
+            <a href="/board/<%= @board_id %>/streams/"/>
+                <div class="bot_nav">
+                    <h3> <<< Back to <%= @board_name %></h3>
+                </div>
+            </a>
+            <a href="/board/<%= @board_id %>/streams/<%= @stream_id %>/post/new">
+                <div class="new bot_nav">
+                    <h3>New Post</h3>
+                </div>
+            </a>
+</div>
