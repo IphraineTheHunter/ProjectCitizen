@@ -17,12 +17,12 @@
  @import "bootstrap";
 
  body {
-     background-color: #666;
+     background-color: #222;
      font-family: monospace;
      background-image: image-url("bg.jpg");
      background-repeat: no-repeat;
-     background-size: cover;
-     min-height: 100%;
+     background-size:cover;
+
  }
 
  .navbar {
@@ -126,4 +126,33 @@ a:hover, a:focus {
 
 ul {
     list-style-type: none;
+}
+
+.poster-name {
+    float: right;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 12;
+}
+
+.post {
+    display: inline-block;
+    width: 99%;
+    padding: 3px;
+    padding-bottom: 10px;
+    margin: 3px;
+    margin-bottom: 6px;
+
+    border-radius: 6px;
+    border-style: dotted;
+    border-width: thin;
+    border-top: none;
+    border-left: none;
+
+    background-color: #eee;
+}
+
+#wrapper {
+    width: 100%;
+    overflow: auto; /* will contain if #first is longer than #second */
 }

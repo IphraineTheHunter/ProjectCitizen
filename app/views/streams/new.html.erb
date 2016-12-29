@@ -3,9 +3,9 @@
         <%= form_tag ('/board/' + @board.id.to_s + '/streams'), url: { :action => "create", } do %>
             <div class="field">
                 <%= label_tag 'Title: ' %></br>
-                <%= text_field_tag :title %></br>
+                <%= text_field_tag :title, nil, :required => true %></br>
                 <%= label_tag 'Content: '%></br>
-                <%= text_area_tag :content %>
+                <%= text_area_tag :content, nil, :required => true %>
             </div>
             <div class="action">
                 <%= submit_tag 'Submit Post' %>

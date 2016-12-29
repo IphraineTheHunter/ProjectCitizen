@@ -21,6 +21,7 @@ class StreamsController < ApplicationController
     @streams = Stream.where(board_id: params[:board_id]).each
     @board_name = Board.find(params[:board_id].to_i).name
     @board_id = params[:board_id]
+    @users = User.all
   end
 
   def show
@@ -30,6 +31,8 @@ class StreamsController < ApplicationController
       @board_id = params[:board_id]
       @stream_id = params[:id]
       @post = Post.new
+      @users = User.all
+      @streams = Stream.all
   end
 
 end

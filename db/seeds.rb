@@ -8,6 +8,7 @@
 
 boards = Board.create([{ name: 'General' }, { name: 'Politics' }, { name: 'Atlandia Discussion' }])
 
+=begin
 streams = Stream.create([
         { title: 'How to keep a house warm when there is a natural gas shortage', board_id: 3, user_id: 1 },
         { title: 'The drought is really intense. How have you been keeping your water usage low?', board_id: 3, user_id: 1 },
@@ -23,3 +24,4 @@ posts = Post.create([
             have the clothes. It's rather nice."},
         {user_id: 2, stream_id: 1, content: "I wish I had bought that jacket I saw a little while ago. :'("}
     ])
+=end
