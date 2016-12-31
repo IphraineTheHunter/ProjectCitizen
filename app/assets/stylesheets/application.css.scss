@@ -63,6 +63,7 @@
     border-radius: 6px;
     margin-bottom: 3px;
     margin-top: 10px;
+    max-height: 80vh;
 }
 
 .name {
@@ -150,6 +151,24 @@ ul {
     border-left: none;
 
     background-color: #eee;
+}
+
+.post-content {
+    background-color: white;
+    padding: 3px;
+    border-style: dotted;
+    border-width: thin;
+    border-color: black;
+    border-radius: 3px;
+    overflow: auto;
+    margin: 3px;
+    white-space: pre-wrap;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.post-footer {
+    float: right;
 }
 
 #wrapper {

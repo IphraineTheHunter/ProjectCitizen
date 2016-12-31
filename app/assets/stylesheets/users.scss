@@ -1,0 +1,31 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*.user-info {
+    float: left;
+    display: block;
+    height: auto;
+    min-height: 100% !important;
+}*/
+
+.user-card {
+    float: left;
+    border-radius: 6px;
+    border-style: dotted;
+    border-width: thin;
+    border-top: none;
+    border-left: none;
+    margin: 3px;
+    padding-left: 12px;
+    background-color: #bababa;
+    height: 70vh;
+    width: 200px;
+}
+
+.post-history {
+    padding: 6px;
+    margin: 6px;
+    max-height: 70vh;
+    overflow-y: scroll;
+}

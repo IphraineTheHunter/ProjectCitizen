@@ -3,19 +3,23 @@
     <div class="poster-name">
         Posted by: <%= @users.find(@streams.find(params[:id]).user_id).name %>
     </div>
-    <% @posts.each do |posts| %>
-    <div id="wrapper">
-        <div class="post">
-            <div class="profile">
-                <h4><%= User.find(posts.user_id).name %></h4>
-                <p>Last seen: <%= User.find(posts.user_id).last_sign_in_at %></p>
-            </div>
-                <div class="post-content">
-                    <p><%= posts.content %></p>
+
+    <div class="post-stream">
+        <% @posts.each do |posts| %>
+        <div id="wrapper">
+            <div class="post" id="<%= posts.id %>">
+                <div class="profile">
+                    <h4><a href="/users/<%= User.find(posts.user_id).id %>"><%= User.find(posts.user_id).name %></a></h4>
+                    <p>Last seen: <%= User.find(posts.user_id).last_sign_in_at %></p>
                 </div>
+                    <div class="post-content">
+                        <p><%= posts.content %></p>
+                    </div>
+                    <div class="post-footer"><p>Posted: <%= posts.created_at %></p></div>
+            </div>
         </div>
+        <% end %>
     </div>
-    <% end %>
 </div>
 
 <div class="container">

@@ -9,40 +9,8 @@
     height: 100%;
 }
 
-.post {
-    display: inline-block;
-    width: 99%;
-    padding-bottom: 10px;
-    margin: 3px;
-    margin-bottom: 6px;
-
-    border-radius: 6px;
-    border-style: dotted;
-    border-width: thin;
-    border-top: none;
-    border-left: none;
-
-    background-color: #eee;
-
-    ul {
-        list-style-type: none;
-    }
-}
-
-
-.post-content {
-    background-color: white;
-    padding: 3px;
-    border-style: dotted;
-    border-width: thin;
-    border-color: black;
-    border-radius: 3px;
-    overflow: auto;
-    margin: 3px;
-    white-space: pre-wrap;
-}
-
-#wrapper {
+.post-stream {
+    height: 70vh;
+    overflow-y: scroll;
     width: 100%;
-    overflow: auto; /* will contain if #first is longer than #second */
 }
