@@ -28,21 +28,31 @@ class StreamsController < ApplicationController
   end
 
   def index
-    @streams = Stream.where(board_id: params[:board_id]).each
-    @board_name = Board.find(params[:board_id].to_i).name
-    @board_id = params[:board_id]
-    @users = User.all
+    if Board.find_by_id(params[:board_id]).present?
+        @streams = Stream.where(board_id: params[:board_id]).each
+        @board_name = Board.find(params[:board_id].to_i).name
+        @board_id = params[:board_id]
+        @users = User.all
+    else
+        flash[:notice] = "Board not found."
+        redirect_to "/board/"
+    end
   end
 
   def show
-      @posts = Post.where(stream_id: params[:id]).each
-      @stream_title = Stream.find(params[:id].to_i).title
-      @board_name = Board.find(params[:board_id].to_i).name
-      @board_id = params[:board_id]
-      @stream_id = params[:id]
-      @post = Post.new
-      @users = User.all
-      @streams = Stream.all
+      if Stream.find_by_id(params[:id]).present?
+        @posts = Post.where(stream_id: params[:id]).each
+        @stream_title = Stream.find(params[:id].to_i).title
+        @board_name = Board.find(params[:board_id].to_i).name
+        @board_id = params[:board_id]
+        @stream_id = params[:id]
+        @post = Post.new
+        @users = User.all
+        @streams = Stream.all
+    else
+        flash[:notice] = "Thread not found."
+        redirect_to "/board/"
+    end
   end
 
 end

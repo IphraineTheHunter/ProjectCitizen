@@ -1,10 +1,10 @@
 <div class="container">
     <h3>Announcements</h3>
-    <div class="announcements">
+    <div class="board-announcements">
         <div class="card">
-            <a><p>So this is the story of all about how my life got flipped and turned upside down</p></a>
-            <a><p>My world's on fire, how 'bout yours?</p></a>
-            <a><p>That's the way I like it, I never get bored</p></a>
+            <% @announcements.each do |announcements| %>
+                <a href="/announcements/<%= announcements.id.to_s %>"><p><%= announcements.title %></p></a>
+            <% end %>
         </div>
     </div>
 </div>
@@ -21,7 +21,7 @@
 <% if current_user.role == 0 %>
     <div class="container">
         <h4> Administrative Controls </h4>
-                <a href="#"/>
+                <a href="/announcements/new"/>
                     <div class="bot_nav button">
                         <h3>New Announcement</h3>
                     </div>

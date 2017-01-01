@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Announcements</h1>
+    <div class="announcements">
+        <% @announcements.each do |announcements| %>
+        <div class="card">
+            <a href="/announcements/<%= announcements.id.to_s %>"><h3><%= announcements.title %></h3></a>
+            <div class="post-footer">
+                <p>Posted by:
+                    <a href="/users/<%= announcements.user_id %>"><%= User.find(announcements.user_id).name %></a>
+                </p>
+                <p><%= announcements.created_at %></p>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+<div class="container">
+    <a href="/board/"/>
+        <div class="bot_nav button">
+            <h3><<< Back to Boards</h3>
+        </div>
+    </a>
+</div>
+<% if current_user.role == 0 %>
+    <div class="container">
+        <h4> Administrative Controls </h4>
+                <a href="/announcements/new"/>
+                    <div class="bot_nav button">
+                        <h3>New Announcement</h3>
+                    </div>
+                </a>
+    </div>
+<% end %>

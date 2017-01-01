@@ -18,12 +18,13 @@ class BoardController < ApplicationController
           redirect_to board_path
       end
 
-      @board = Board.new
+#      @announcement = Announcement.new
   end
 
 
   def show
       @boards = Board.all
+      @announcements = Announcement.all.reverse_order
   end
 
 end
