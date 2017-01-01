@@ -1,10 +1,35 @@
-
 <div class="container">
+    <h3>Announcements</h3>
+    <div class="announcements">
+        <div class="card">
+            <a><p>So this is the story of all about how my life got flipped and turned upside down</p></a>
+            <a><p>My world's on fire, how 'bout yours?</p></a>
+            <a><p>That's the way I like it, I never get bored</p></a>
+        </div>
+    </div>
+</div>
+<div class="container clearfix">
     <h1>Forum</h1>
     <% @boards.each do |board| %>
-    <div class="post">
-        <h3><a href="/board/<%= board.id %>/streams/"><%= board.name %></a></h3>
-        <hr>
-    </div>
+        <div class="card">
+            <h3><a href="/board/<%= board.id %>/streams/"><%= board.name %></a></h3>
+            <hr>
+        </div>
     <% end %>
 </div>
+
+<% if current_user.role == 0 %>
+    <div class="container">
+        <h4> Administrative Controls </h4>
+                <a href="#"/>
+                    <div class="bot_nav button">
+                        <h3>New Announcement</h3>
+                    </div>
+                </a>
+                <a href="/board/new">
+                    <div class="bot_nav button">
+                        <h3>New Board</h3>
+                    </div>
+                </a>
+    </div>
+<% end %>

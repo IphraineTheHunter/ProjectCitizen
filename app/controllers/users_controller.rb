@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
     before_filter :validate_user
 
+=begin
+User Roles:
+    Admin: Ann - 0
+    General: Gerald - 1
+    Small-Farm: Sally - 2
+    Ag-Indus: Albert - 3
+=end
+
     def show
         unless params[:id].present?
             @user = current_user

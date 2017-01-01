@@ -2,11 +2,21 @@ class StreamsController < ApplicationController
   before_filter :validate_user
 
   def create
-      content = params[:content]
-      new_stream = Stream.create(board_id: params[:board_id], user_id: current_user.id, title: params[:title])
-      current_user.posts.create(stream_id: new_stream.id, content: content)
+      unless params[:title].match(" ").present?
+          flash[:notice] = "Please write your titles as a sentence."
+          redirect_to(:back)
+      else
+          if params[:title].length <= 100
+              content = params[:content]
+              new_stream = Stream.create(board_id: params[:board_id], user_id: current_user.id, title: params[:title])
+              current_user.posts.create(stream_id: new_stream.id, content: content)
 
-      redirect_to board_streams_path + '/' + new_stream.id.to_s
+              redirect_to board_streams_path + '/' + new_stream.id.to_s
+          else
+              flash[:notice] = "Title is too long."
+              redirect_to(:back)
+          end
+      end
   end
 
   def new

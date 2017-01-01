@@ -6,6 +6,7 @@
 		<span class="name">Project Citizen</span>
 		<ul class="nav navbar-nav navbar-right">
 			<% if user_signed_in? %>
+				<li><a href="/users/<%= current_user.id %>">Profile</a></li>
 				<li><a href="/board/">Forum</a></li>
 				<li>
 					<%= link_to(destroy_user_session_path, :method => :delete) do %>

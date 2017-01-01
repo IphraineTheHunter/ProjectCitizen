@@ -1,25 +1,37 @@
 <div class="container">
     <div class="user-info">
-        <div class="user-card">
-            <h2><%= @user.name %></h2>
-            <h4>Last seen:</h4> <p><%= @user.last_sign_in_at %></p>
-            <h4>Current Wealth:</h4> <p><span class="glyphicon glyphicon-euro before-text"></span>  <%= @user.money %></p>
-            <h4>Number of posts:</h4> <p> <%= @user.posts.count %> </p>
+        <div class="user-column">
+            <div class="user-card">
+                <h2><%= @user.name %></h2>
+                <h4>Last seen:</h4> <p><%= @user.last_sign_in_at %></p>
+                <h4>Current Wealth:</h4> <p><span class="glyphicon glyphicon-euro before-text"></span>  <%= @user.money %></p>
+                <h4>Number of posts:</h4> <p> <%= @user.posts.count %> </p>
+                <% if current_user.id.to_s != params[:id] %>
+                    <div class="button">
+                        <h3>Send Money</h3>
+                    </div>
+                    <p>(Feature coming soon!)</p>
+                <% end %>
+            </div>
         </div>
     </div>
     <!-- begin post history -->
     <div class="post-history">
-        <h3>Post History</h3>
-        <% @posts.each do |posts| %>
-            <h4><a href="/board/<%= Stream.find(posts.stream_id).board_id.to_s
-                %>/streams/<%= Stream.find(posts.stream_id).id.to_s%>#<%=
-                posts.id %>">
-                <%= Stream.find(posts.stream_id).title %></a></h4>
-            <div class="post-content">
-                <p><%= posts.content %></p>
-            </div>
-            <div class="post-footer"><p>Posted: <%= posts.created_at %></p></div>
-        <% end %>
-        <!-- end post history -->
+        <h2> Post History</h2>
+        <div class="post-history-container">
+            <% @posts.each do |posts| %>
+                <div class="card">
+                    <h4><a href="/board/<%= Stream.find(posts.stream_id).board_id.to_s
+                        %>/streams/<%= Stream.find(posts.stream_id).id.to_s%>#<%=
+                        posts.id %>">
+                        <%= Stream.find(posts.stream_id).title %></a></h4>
+                    <div class="post-content">
+                        <p><%= posts.content %></p>
+                    </div>
+                    <div class="post-footer"><p>Posted: <%= posts.created_at %></p></div>
+                </div>
+            <% end %>
+            <!-- end post history -->
+        </div>
     </div>
 </div>

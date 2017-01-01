@@ -25,6 +25,10 @@
 
  }
 
+.clearfix {
+    overflow: auto;
+}
+
  .navbar {
      border: none;
      border-radius: 0px;
@@ -81,43 +85,38 @@ h1 {
 
 }
 
-.bot_nav {
-    float: right;
-    padding-left: 3px;
-    padding-right: 3px;
+.button {
     overflow: hidden;
-//    margin-top: 3px;
-    margin: 3px;
+    white-space: nowrap;
 
-//    display: inline-block;
-    border-radius: 3px;
     color: white;
     background-color: #777;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: 3px;
+
+    border-style: dotted;
+    border-width: thin;
+    border-color: black;
+    border-top: none;
+    border-left: none;
+    border-radius: 3px;
 }
 
-.bot_nav:hover {
+.button:active {
+    border-style: dotted;
+    border-width:thin;
+    border-color: black;
+    border: none;
+}
+
+.button:hover {
     background-color: #666;
     color: black;
 }
 
-.new {
+.bot_nav {
     float: right;
-    padding-left: 3px;
-    padding-right: 3px;
-    overflow: hidden;
-    margin: 3px;
-//    margin-left: 90%;
-//    display: inline-block;
-    border-radius: 3px;
-    white-space: nowrap;
-    color: white;
-    background-color: #888;
-
-}
-
-.new:hover {
-    background-color: #999;
-    color: black;
 }
 
 a:hover, a:focus {
@@ -136,7 +135,7 @@ ul {
     font-size: 12;
 }
 
-.post {
+.card {
     display: inline-block;
     width: 99%;
     padding: 3px;
@@ -163,8 +162,9 @@ ul {
     overflow: auto;
     margin: 3px;
     white-space: pre-wrap;
-    max-height: 300px;
     overflow-y: scroll;
+    max-height: 300px;
+    will-change: transform;
 }
 
 .post-footer {

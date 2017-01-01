@@ -3,9 +3,9 @@
         <%= form_tag ('/board/' + @board.id.to_s + '/streams'), url: { :action => "create", } do %>
             <div class="field">
                 <%= label_tag 'Title: ' %></br>
-                <%= text_field_tag :title, nil, :required => true %></br>
+                <%= text_field_tag :title, nil, :required => true, size: 100, maxlength: 100 %></br>
                 <%= label_tag 'Content: '%></br>
-                <%= text_area_tag :content, nil, :required => true %>
+                <%= text_area_tag :content, nil, :required => true, size: "100x10" %>
             </div>
             <div class="action">
                 <%= submit_tag 'Submit Post' %>
@@ -15,7 +15,7 @@
 
 <div class="container">
     <a href="/board/"/>
-        <div class="bot_nav">
+        <div class="bot_nav button">
             <h3> <<< Back to Boards</h3>
         </div>
     </a>

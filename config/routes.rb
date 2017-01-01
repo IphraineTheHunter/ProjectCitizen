@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   # routes for Boards
   match 'board', to: 'board#show', via: :get
-  match 'new_board', to: 'board#new', via: [:get, :post]
 
   resources :board do
       resources :streams do

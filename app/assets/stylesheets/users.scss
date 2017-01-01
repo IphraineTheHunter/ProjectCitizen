@@ -9,8 +9,12 @@
     min-height: 100% !important;
 }*/
 
-.user-card {
+.user-column {
     float: left;
+    height: 70vh;
+}
+
+.user-card {
     border-radius: 6px;
     border-style: dotted;
     border-width: thin;
@@ -19,13 +23,20 @@
     margin: 3px;
     padding-left: 12px;
     background-color: #bababa;
-    height: 70vh;
     width: 200px;
 }
 
 .post-history {
     padding: 6px;
     margin: 6px;
+}
+
+.post-history-container {
     max-height: 70vh;
     overflow-y: scroll;
+    will-change: transform;
+}
+
+.button {
+    float: inherit;
 }

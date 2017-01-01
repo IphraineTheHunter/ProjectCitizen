@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container clearfix">
     <h1><%= @board_name %> </h1>
     <% @streams.each do |streams| %>
-        <div class="post">
+        <div class="card">
             <h3><a href="/board/<%= @board_id %>/streams/<%= streams.id %>"><%= streams.title %></a></h3>
             <hr>
             <div class="poster-name">
@@ -14,12 +14,12 @@
 <div class="container">
 
             <a href="/board/"/>
-                <div class="bot_nav">
+                <div class="bot_nav button">
                     <h3> <<< Back to Boards</h3>
                 </div>
             </a>
             <a href="/board/<%= @board_id %>/streams/new">
-                <div class="new bot_nav">
+                <div class="bot_nav button">
                     <h3>New Thread</h3>
                 </div>
             </a>
