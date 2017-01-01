@@ -175,3 +175,11 @@ ul {
     width: 100%;
     overflow: auto; /* will contain if #first is longer than #second */
 }
+
+.admin {
+    background-color: #666;
+    color: lawngreen;
+    border-style: dotted;
+    border-color: lawngreen;
+    border-width: 2px;
+}

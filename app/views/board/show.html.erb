@@ -1,11 +1,12 @@
 <div class="container">
     <h3>Announcements</h3>
     <div class="board-announcements">
+        <% @announcements.each do |announcements| %>
         <div class="card">
-            <% @announcements.each do |announcements| %>
-                <a href="/announcements/<%= announcements.id.to_s %>"><p><%= announcements.title %></p></a>
-            <% end %>
+            <a href="/announcements/<%= announcements.id.to_s %>"><p><%= announcements.title %></p></a>
+            <div class="post-footer"><%= announcements.created_at %></div>
         </div>
+        <% end %>
     </div>
 </div>
 <div class="container clearfix">
@@ -19,7 +20,7 @@
 </div>
 
 <% if current_user.role == 0 %>
-    <div class="container">
+    <div class="container admin">
         <h4> Administrative Controls </h4>
                 <a href="/announcements/new"/>
                     <div class="bot_nav button">

@@ -4,15 +4,21 @@
         <div class="announcement-content">
             <%= @announcement.content %>
         </div>
+        <div class="post-footer">
+            <p>Posted by: <%= User.find_by_id(@announcement.user_id).name %></p>
+            <p> At: <%= @announcement.created_at %> </p>
+        </div>
     </div>
 </div>
 <div class="container">
-    <a href="/announcements/">
+    <a href="/board/">
         <div class="bot_nav button">
             <h3><<< Back to Boards</h3>
         </div>
+    </a>
+    <a href="/announcements/">
         <div class="bot_nav button">
-            <h3><<< Return to Announcements</h3>
+            <h3>Return to Announcements</h3>
         </div>
     </a>
 </div>
